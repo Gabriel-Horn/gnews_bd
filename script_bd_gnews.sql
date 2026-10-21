@@ -1,12 +1,13 @@
-CREATE TABLE historico_revisão(
-  
+CREATE TABLE historico_revisao (
   id_historico SERIAL PRIMARY KEY,
-  fk_noticia int, 
-  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia),
-  fk_editor int, 
-  CONSTRAINT fk_editor FOREIGN KEY (fk_editor) REFERENCES editor (id_editor),
-  observação_revisao varchar(255),
-  status_aplicado  varchar(255),
+  observacao_revisao varchar (255),
+  status_aplicado varchar (255),
   data_alteracao timestamp
   
 );
+
+SELECT * FROM historico_revisao;
+
+INSERT INTO  historico_revisao(observacao_revisao, status_aplicado, data_alteracao) VALUES ('Observação concluida com sucesso e sem erros', 'Ok', '2026-12-30 14:30:00' )         
+
+
