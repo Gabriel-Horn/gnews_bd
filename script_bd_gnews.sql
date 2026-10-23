@@ -19,4 +19,5 @@ CREATE TABLE midia_noticia (
 
 );         
 
+SELECT * FROM historico_revisao;
 
