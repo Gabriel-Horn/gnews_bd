@@ -19,5 +19,6 @@ CREATE TABLE midia_noticia (
 
 );         
 
-SELECT * FROM historico_revisao;
+SELECT * FROM midia_noticia;
 
+INSERT INTO  midia_noticia(tipo_midia, url_arquivo, legenda, data_upload) VALUES ('Página web', 'www.gnews.com', 'Parque sustentável', '2027-01-01 03:00:34' );
