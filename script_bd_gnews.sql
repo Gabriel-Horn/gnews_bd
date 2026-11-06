@@ -22,3 +22,24 @@ CREATE TABLE midia_noticia (
 SELECT * FROM midia_noticia;
 
 INSERT INTO  midia_noticia(tipo_midia, url_arquivo, legenda, data_upload) VALUES ('Página web', 'www.gnews.com', 'Parque sustentável', '2027-01-01 03:00:34' );
+
+CREATE TABLE noticia(
+  
+  id_noticia SERIAL PRIMARY KEY,
+  titulo varchar(255),
+  subtitulo varchar(255),
+  conteudo_texto varchar(255),
+  status varchar(255),
+  data_publicacao timestamp,
+  data_criacao timestamp,
+  fk_jornalista int,
+  fk_categoria int,
+  CONSTRAINT fk_jornalista FOREIGN KEY (fk_jornalista) REFERENCES jornalista (id_jornalista),
+  CONSTRAINT fk_categoria FOREIGN KEY (fk_categoria) REFERENCES categoria (id_categoria) 
+
+);
+
+
+INSERT INTO noticia (titulo, subtitulo, conteudo_texto, status) VALUES ('Novo parque sustentável', 'Novo parque anunciado em Cascavel construído com recusos ecológicos.', 'Nesta manhã foi anunciado a finalização do parque que estava sendo construído. È um espaço de lazer pensado em sustentabilidade.', 'Ok', '2026-12-30 03:01:24');
+SELECT * FROM noticia;
+
