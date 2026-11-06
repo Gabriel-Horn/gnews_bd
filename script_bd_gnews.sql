@@ -110,4 +110,16 @@ CONSTRAINT fk_tag FOREIGN KEY (fk_tag) REFERENCES tag (id_tag)
 
 SELECT * FROM noticia_tag;
 
+CREATE TABLE tag (
+id_tag SERIAL PRIMARY KEY,
+nome_tag varchar(50)
+);
+
+
+
+INSERT INTO  tag(nome_tag) VALUES ('noticia');
+
+SELECT * FROM tag;
+
+
 
