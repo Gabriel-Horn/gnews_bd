@@ -57,3 +57,18 @@ CREATE TABLE jornalista(
 INSERT INTO jornalista (regristro_profissional, biografio character, especialidade) VALUES ('');
 SELECT * FROM jornalista;
 
+CREATE TABLE usuario(
+
+  id_usuario SERIAL PRIMARY KEY,
+  nome varchar(255),
+  email varchar(255),
+  senha_hash varchar(255),
+  data_nascimento date,
+  tipo_perfil varchar(255),
+  data_cadastro timestamp
+
+);
+
+INSERT INTO usuario (nome, email, senha_hash, data_nascimento, tipo_perfil, data_cadastro) VALUES ('Roberta', 'roberta@gmail.com', '', '2000-10-19 05:27:24', '', '2013-07-18 14:30:58' );
+SELECT * FROM usuario;
+
