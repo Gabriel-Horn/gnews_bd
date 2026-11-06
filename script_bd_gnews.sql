@@ -1,8 +1,10 @@
-CREATE TABLE historico_revisao (
+REATE TABLE historico_revisao(
   id_historico SERIAL PRIMARY KEY,
+  fk_noticia int, 
   observacao_revisao varchar (255),
   status_aplicado varchar (255),
-  data_alteracao timestamp
+  data_alteracao timestamp,
+  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia)
   
 );
 
@@ -35,7 +37,7 @@ CREATE TABLE noticia(
   fk_jornalista int,
   fk_categoria int,
   CONSTRAINT fk_jornalista FOREIGN KEY (fk_jornalista) REFERENCES jornalista (id_jornalista),
-  CONSTRAINT fk_categoria FOREIGN KEY (fk_categoria) REFERENCES categoria (id_categoria) 
+  CONSTRAINT fk_categoria FOREIGN KEY (fk_categoria) REFERENCES public_categoria (id_categoria) 
 
 );
 
