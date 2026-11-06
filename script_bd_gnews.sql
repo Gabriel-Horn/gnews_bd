@@ -43,3 +43,17 @@ CREATE TABLE noticia(
 INSERT INTO noticia (titulo, subtitulo, conteudo_texto, status) VALUES ('Novo parque sustentável', 'Novo parque anunciado em Cascavel construído com recusos ecológicos.', 'Nesta manhã foi anunciado a finalização do parque que estava sendo construído. È um espaço de lazer pensado em sustentabilidade.', 'Ok', '2026-12-30 03:01:24');
 SELECT * FROM noticia;
 
+CREATE TABLE jornalista(
+
+  id_jornalista SERIAL PRIMARY KEY,
+  registro_profissional varchar(50),
+  biografia character varying(255),
+  especialidade varchar(100),
+  fk_usuario int,
+  CONSTRAINT fk_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario)
+
+);
+
+INSERT INTO jornalista (regristro_profissional, biografio character, especialidade) VALUES ('');
+SELECT * FROM jornalista;
+
