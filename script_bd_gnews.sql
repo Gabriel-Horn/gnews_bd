@@ -72,3 +72,15 @@ CREATE TABLE usuario(
 INSERT INTO usuario (nome, email, senha_hash, data_nascimento, tipo_perfil, data_cadastro) VALUES ('Roberta', 'roberta@gmail.com', '', '2000-10-19 05:27:24', '', '2013-07-18 14:30:58' );
 SELECT * FROM usuario;
 
+create table public_categoria(
+  id_categoria serial primary key,
+  nome_categoria     varchar(100) null,
+  descricao          varchar(255) null,
+  slug               varchar(100)
+
+);
+
+INSERT INTO  public_categoria (nome_categoria, descricao, slug) VALUES ('Susten', 'Ok', '2026-12-30 14:30:00' );
+
+SELECT * FROM public_categoria;
+
