@@ -93,8 +93,8 @@ CREATE TABLE comentario(
   id_usuario int,
   texto_comentario varchar(255),
   data_publicacao timestamp,
-  ativo boolean
-  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia)
+  ativo boolean,
+  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia),
   CONSTRAINT fk_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario)
 
 );
@@ -122,6 +122,22 @@ nome_tag varchar(50)
 INSERT INTO  tag(nome_tag) VALUES ('noticia');
 
 SELECT * FROM tag;
+
+CREATE TABLE curtida_noticia(
+
+  id_curtida SERIAL PRIMARY KEY,
+  fk_noticia bigint,
+  fk_usuario bigint,
+  data_reacao timestamp,
+  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia),
+  CONSTRAINT fk_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario)
+
+);
+
+INSERT INTO  curtida_noticia(data_reacao) VALUES ('2027-01-04 13:20:21');
+
+SELECT * FROM curtida_noticia;
+
 
 
 
