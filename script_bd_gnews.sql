@@ -84,3 +84,21 @@ INSERT INTO  public_categoria (nome_categoria, descricao, slug) VALUES ('Susten'
 
 SELECT * FROM public_categoria;
 
+CREATE TABLE comentario(
+
+  id_comentario SERIAL PRIMARY KEY,
+  id_noticia int,
+  id_usuario int,
+  texto_comentario varchar(255),
+  data_publicacao timestamp,
+  ativo boolean
+  CONSTRAINT fk_noticia FOREIGN KEY (fk_noticia) REFERENCES noticia (id_noticia)
+  CONSTRAINT fk_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario)
+
+);
+
+INSERT INTO  public_categoria (texto_comentario, data_publicacao, ativo boolean) VALUES ('Muito bom, jornalista Roberta com otima dicção', '2026-11-06 08:01:56', 'true' );
+
+SELECT * FROM comentario;
+
+
