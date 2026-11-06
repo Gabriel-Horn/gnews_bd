@@ -101,4 +101,13 @@ INSERT INTO  public_categoria (texto_comentario, data_publicacao, ativo boolean)
 
 SELECT * FROM comentario;
 
+CREATE TABLE noticia_tag (
+noticia_tag SERIAL PRIMARY KEY,
+fk_tag bigint,
+CONSTRAINT fk_tag FOREIGN KEY (fk_tag) REFERENCES tag (id_tag) 
+
+);
+
+SELECT * FROM noticia_tag;
+
 
